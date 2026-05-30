@@ -3,26 +3,12 @@ services:
   docx-pdf-api:
     env_file:
       - .env
-    container_name: file-convertor-api
-    image: 192.168.1.112:5000/docx-pdf-api
+    image: docx-pdf-api
     ports:
       - "${EXPOSE_PORT}:8080"
-
     restart: unless-stopped
     networks:
       - file-convertor-api-network
-
-    #volumes:
-      # Windows fonts
-      #- "C:/Windows/Fonts:/usr/share/fonts/windows:ro"
-
-      # Persian/custom fonts
-      #- "./fonts:/usr/share/fonts/custom:ro"
-
-      # temp files
-      #- "./temp:/tmp/docxpdf"
-
-
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/docs"]
       interval: 30s
@@ -32,7 +18,3 @@ services:
 networks:
   file-convertor-api-network:
     driver: bridge
-    ipam:
-       config:
-        - subnet: ${NETWORK_SUBNET}
-          gateway: ${NETWORK_GATEWAY}
