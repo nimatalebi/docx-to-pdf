@@ -1,4 +1,4 @@
-FROM mirror-docker.runflare.com/libreofficedocker/libreoffice-unoserver:3.18
+FROM libreofficedocker/libreoffice-unoserver:3.18
 
 USER root
 
@@ -23,7 +23,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip3 install -i https://mirror2.chabokan.net/pypi/simple  \
+RUN pip3 install  \
     --break-system-packages \
     --no-cache-dir \
     -r requirements.txt
