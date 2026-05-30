@@ -1,0 +1,15 @@
+# Runtime temp output
+temp/*
+
+# Bundled fonts are optional and usually large binaries
+fonts/*
+!fonts/fonts should be here.txt
+
+# Python cache and virtual envs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local secrets
+.env

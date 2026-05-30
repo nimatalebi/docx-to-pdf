@@ -1,0 +1,2 @@
+Place custom fonts for DOCX to PDF conversion in this folder.
+The actual font files are ignored by git.
